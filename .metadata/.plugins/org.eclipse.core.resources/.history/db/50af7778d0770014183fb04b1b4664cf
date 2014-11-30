@@ -1,0 +1,30 @@
+package com.google;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class baseTest {
+
+	
+	public static WebDriver driver;
+
+	@Before
+	public static void beforeClass() {
+
+		driver=new FirefoxDriver();
+		driver.get("https://www.google.co.uk/");
+		driver.manage().window().maximize();
+		//driver.manage().timeouts().implicitlyWait(, )
+	}
+	@After
+	public static void afterclass()
+	{
+		driver.quit();
+
+	}
+
+}
+

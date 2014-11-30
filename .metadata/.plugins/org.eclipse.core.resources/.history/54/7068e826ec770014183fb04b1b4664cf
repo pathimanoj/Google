@@ -1,0 +1,23 @@
+package com.google.regression;
+
+import org.junit.Assert;
+import org.junit.Test;
+import org.openqa.selenium.By;
+
+import com.google.basePage;
+import com.google.pages.HomePage;
+
+public class RegressionTestSuite extends basePage 
+{
+
+	@Test
+	public void SignUpTest()
+	{		
+
+		HomePage homePage = new HomePage();
+
+		homePage.createAnAccount("Test","Account","MyGmailPassword", "MyGmailPassword", 10 , 1984,, "07702090682" , "test@test.com" );
+
+		Assert.assertTrue(driver.findElement(By.id("errormsg_0_GmailAddress")).getText().contains("You can't leave this empty."));
+	}
+}

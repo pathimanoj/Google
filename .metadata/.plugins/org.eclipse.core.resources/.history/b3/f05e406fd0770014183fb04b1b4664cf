@@ -1,0 +1,5 @@
+package com.google.regression;
+
+public class RegressionTestSuite {
+
+}

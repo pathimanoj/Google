@@ -1,0 +1,14 @@
+package com.google.regression;
+
+import com.google.basePage;
+import com.google.baseTest;
+import com.google.pages.HomePage;
+
+public class RegressionTestSuite extends HomePage {
+	
+	//HomePage homePage = new HomePage();
+	
+	createAnAccount("Test","Account","Password@123", "Passsword@123", "January", 10 , 1984, "Male", 07702090682 , "test@test.com" );
+		
+
+}

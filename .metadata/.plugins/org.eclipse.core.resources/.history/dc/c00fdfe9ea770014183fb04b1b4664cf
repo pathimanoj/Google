@@ -1,0 +1,20 @@
+package com.google.regression;
+
+import org.junit.Test;
+
+import com.google.basePage;
+import com.google.pages.HomePage;
+
+public class RegressionTestSuite extends basePage 
+{
+
+	@Test
+	public void SignUpTest()
+	{		
+
+		HomePage homePage = new HomePage();
+
+		homePage.createAnAccount("Test","Account","Password@123", "Passsword@123", 1, 10 , 1984, "Male", "07702090682" , "test@test.com" );
+
+	}
+}

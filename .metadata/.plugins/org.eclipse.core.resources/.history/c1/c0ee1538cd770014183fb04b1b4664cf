@@ -1,0 +1,29 @@
+package com.google.pages;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import com.google.basePage;
+
+public class Homepage extends basePage {
+	
+	public Homepage(){
+		Assert.assertTrue(driver.getPageSource().contains("Gmail"));
+		
+	}
+
+	public void CreateAnAccount(){
+		driver.findElement(By.className("gb_d")).click();
+		driver.findElement(By.id("link-signup")).click();
+		driver.findElement(By.id("firstname-label")).sendKeys("firstname");
+		driver.findElement(By.id("LastName")).sendKeys("lastname");
+		driver.findElement(By.id("password-label")).sendKeys("password");
+		driver.findElement(By.id("PasswdAgain")).sendKeys("password");
+		WebElement month = driver.findElement(By.className("goog-inline-block goog-flat-menu-button jfk-select"));
+ 
+         
+       
+		
+	}
+	
+}

@@ -1,0 +1,35 @@
+package com.google.pages;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+import com.google.basePage;
+
+public class Homepage extends basePage {
+	
+	public Homepage(){
+		Assert.assertTrue(driver.getPageSource().contains("Gmail"));
+		
+	}
+
+	public void CreateAnAccount(String fname, String lname, String password, String confirmpwd, String month, int day, int year, String gender, int mobilenumber, String email )
+	{
+		driver.findElement(By.className("gb_d")).click();
+		driver.findElement(By.id("link-signup")).click();
+		driver.findElement(By.id("firstname-label")).sendKeys(fname);
+		driver.findElement(By.id("LastName")).sendKeys(lname);
+		driver.findElement(By.id("password-label")).sendKeys(password);
+		driver.findElement(By.id("PasswdAgain")).sendKeys(confirmpwd);
+		WebElement monthelement = driver.findElement(By.cssSelector(".goog-inline-block.goog-flat-menu-button.jfk-select.goog-flat-menu-button-hover"));
+		Select birthmonth = new Select(monthelement);
+		birthmonth.selectByVisibleText(month);
+ 
+		
+         
+       
+		
+	}
+	
+}

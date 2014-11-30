@@ -1,0 +1,60 @@
+package com.google.pages;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import com.google.basePage;
+
+public class HomePage extends basePage {
+	
+	public HomePage()
+	{
+		// To verify in the google page with gmail option
+		Assert.assertTrue(driver.getPageSource().contains("Gmail"));		
+	}
+
+	public void createAnAccount(String fname, String lname, String password, String confirmpwd,int day, int year, String mobilenumber, String email )
+	{
+		//Click on gmail link
+		driver.findElement(By.linkText("Gmail")).click();
+		
+		//Click on Create an account link
+		driver.findElement(By.id("link-signup")).click();
+		
+		//Enter firstname, lastname, password and confirm password
+		driver.findElement(By.id("firstname-label")).sendKeys(fname);
+		driver.findElement(By.id("LastName")).sendKeys(lname);
+		driver.findElement(By.id("password-label")).sendKeys(password);
+		driver.findElement(By.id("PasswdAgain")).sendKeys(confirmpwd);
+		
+		//Select birthday month
+		driver.findElement(By.xpath(".//*[@id='BirthMonth']/div")).click();
+	    driver.findElement(By.xpath(".//*[@id='BirthMonth']/div[2]/div[@id=':5']")).click();
+		
+	    //select birthday day
+		driver.findElement(By.id("BirthDay")).sendKeys(String.valueOf(day));
+		
+		//select birthday year
+		driver.findElement(By.id("BirthYear")).sendKeys(String.valueOf(year));
+		
+		//select gender
+		driver.findElement(By.xpath(".//*[@id='Gender']/div")).click();
+	    driver.findElement(By.xpath(".//*[@id='Gender']/div[2]/div[@id=':f']")).click();
+		
+	    //enter mobile number
+		driver.findElement(By.id("RecoveryPhoneNumber")).sendKeys(mobilenumber);
+		
+		//enter email address
+		driver.findElement(By.id("RecoveryEmailAddress")).sendKeys(email);
+		
+		//skipping captcha
+		driver.findElement(By.id("SkipCaptcha")).click();
+		
+		//select terms of service
+		driver.findElement(By.id("TermsOfService")).click();
+		
+		//click on next button
+		driver.findElement(By.id("submitbutton")).click();
+        		
+	}
+	
+}

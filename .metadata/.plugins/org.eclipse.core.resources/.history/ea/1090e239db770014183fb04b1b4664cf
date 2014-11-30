@@ -1,0 +1,12 @@
+package com.google;
+
+import org.openqa.selenium.WebDriver;
+
+public class basePage {
+	
+		
+		protected WebDriver driver = baseTest.driver;
+
+	}
+
+

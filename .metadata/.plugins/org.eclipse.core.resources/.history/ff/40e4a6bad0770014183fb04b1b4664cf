@@ -1,0 +1,11 @@
+package com.google.regression;
+
+import com.google.pages.HomePage;
+
+public class RegressionTestSuite {
+	
+	HomePage homePage = new HomePage();
+	homePage.CreateAnAccount("Test", "Account","Password@123", "Passsword@123", "January", 10 , 1984, "Male", 07702090682 , "test@test.com" );
+		
+
+}
